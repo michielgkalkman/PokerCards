@@ -21,6 +21,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.tahjaj.pokercards.org.taHjaj.wo.pokercards.showcard.*;
+import org.tahjaj.pokercards.shake.ShakeSensorActivity;
 
 import icepick.Icepick;
 import timber.log.Timber;
@@ -64,7 +65,7 @@ public class NumberGridActivity extends AppCompatActivity {
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
-                final Intent launchIntent = new Intent(NumberGridActivity.this, ShowPokerCard.class);
+                final Intent launchIntent = new Intent(NumberGridActivity.this, ShakeSensorActivity.class);
 
                 Timber.d("Launching showcard");
 

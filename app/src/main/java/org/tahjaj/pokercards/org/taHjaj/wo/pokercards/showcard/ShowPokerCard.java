@@ -1,6 +1,8 @@
 package org.tahjaj.pokercards.org.taHjaj.wo.pokercards.showcard;
 
+import android.content.Context;
 import android.content.Intent;
+import android.os.Vibrator;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -27,13 +29,16 @@ public class ShowPokerCard extends AppCompatActivity {
 
         final ImageView imageView = (ImageView) findViewById(R.id.text_view_showcard);
 
-        Timber.d("Test:" + id);
-
-//            imageView.setLayoutParams(new GridView.LayoutParams(85, 85));
         imageView.setAdjustViewBounds(true);
         imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
         imageView.setPadding(8, 8, 8, 8);
         imageView.setImageResource(id);
 
+        Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+
+        if( vibrator.hasVibrator()) {
+            // Vibrate for 500 milliseconds
+            vibrator.vibrate(500);
+        }
     }
 }
